@@ -4,7 +4,7 @@ Create three machines for workers
 Create one machine for jumbhost
 
 ## In jumbhost
-update hosts file
+Update hosts file
 
 ```
 192.168.0.3	jumbhost01.cluster.local	jumbhost01 jh1
