@@ -40,9 +40,9 @@ tenant-id = a9***************************2d7
 
 ```
 
-### StorageClass
+## StorageClass
 
-## Apply this storage class:
+### Apply this storage class:
 
 ```
 more storageclass.yaml 
@@ -56,7 +56,7 @@ metadata:
 
 ```
 
-#
+
 ## Nginx ingress Controller
 Follow these instructions:
 https://kubernetes.github.io/ingress-nginx/deploy/#bare-metal-clusters
