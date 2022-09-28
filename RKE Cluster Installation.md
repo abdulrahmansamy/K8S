@@ -1,7 +1,7 @@
 # RKE installation on openstack Cloud:
-Create three machines for masters
-Create three machines for workers
-Create one machine for jumbhost
+- [ ] Create three machines for masters
+- [ ] Create three machines for workers
+- [ ] Create one machine for jumbhost
 
 ## In jumbhost
 Update hosts file
