@@ -1,4 +1,4 @@
-#RKE installation on openstack Cloud:
+# RKE installation on openstack Cloud:
 Create three machines for masters
 Create three machines for workers
 Create one machine for jumbhost
