@@ -1,3 +1,25 @@
+#RKE installation on openstack Cloud:
+Create three machines for masters
+Create three machines for workers
+Create one machine for jumbhost
+
+## In jumbhost
+update hosts file
+
+```
+192.168.0.3	jumbhost01.cluster.local	jumbhost01 jh1
+192.168.0.4	master01.cluster.local	master01 sm1
+192.168.0.5	master02.cluster.local	master02 sm2
+192.168.0.6	master03.cluster.local	master03 sm3
+192.168.0.7	worker01.cluster.local	worker01 sw1
+192.168.0.8	worker02.cluster.local	worker02 sw2
+192.168.0.9	worker03.cluster.local	worker03 sw3
+
+```
+
+Run this script:
+[RKE_Installation.sh](https://github.com/abdulrahmansamy/k8s/blob/180d46ed9cca9b2200a802e1b4f5c63f90f2dac3/RKE_Installation.sh)
+
 
 ## CSI cinder plugin
 
