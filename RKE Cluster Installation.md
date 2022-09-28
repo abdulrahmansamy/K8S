@@ -4,7 +4,7 @@
 - [ ] Create one machine for jumbhost
 
 ## In jumbhost
-Update hosts file
+- [ ] Update hosts file
 
 ```
 192.168.0.3	jumbhost01.cluster.local	jumbhost01 jh1
@@ -17,7 +17,7 @@ Update hosts file
 
 ```
 
-Run this script:
+- [ ] Run this script:
 [RKE_Installation.sh](https://github.com/abdulrahmansamy/k8s/blob/180d46ed9cca9b2200a802e1b4f5c63f90f2dac3/RKE_Installation.sh)
 
 
