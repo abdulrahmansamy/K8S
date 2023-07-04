@@ -23,6 +23,16 @@ etcdctl snapshot status snapshot.db
 etcdctl snapshot save -h
 ```
 
+```
+ etcdctl snapshot save /opt/snapshot.db \
+ --endpoints https://192.27.109.9:2379 \
+ --cacert /etc/kubernetes/pki/etcd/ca.crt \
+ --cert /etc/kubernetes/pki/etcd/server.crt \
+ --key /etc/kubernetes/pki/etcd/server.key
+```
+
+
+
 # ETCD Restore
 
 ```
@@ -44,6 +54,14 @@ service kube-apiserver stop
 # ETCDCTL_API=3
 etcdctl snapshot retore snapshot.db --data-dir /var/lib/etcd-from-backup
 ```
+```
+ etcdctl snapshot restore /opt/snapshot-pre-boot.db \
+ --endpoints https://192.27.109.9:2379 \
+ --cacert /etc/kubernetes/pki/etcd/ca.crt \
+ --cert /etc/kubernetes/pki/etcd/server.crt \
+ --key /etc/kubernetes/pki/etcd/server.key \
+ --data-dir /var/lib/etcd-from-backup
+ ```
 
 # Edit etcd.service to use the new data dirctory
 ```
@@ -65,3 +83,5 @@ systemctl start kube-apiserver
 ```
 etcdctl snapshot restore -h
 ```
+
+
