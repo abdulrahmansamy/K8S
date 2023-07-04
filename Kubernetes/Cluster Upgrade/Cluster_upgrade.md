@@ -1,22 +1,34 @@
 # Control Plan Upgrade
 
-## Master Node Upgrade:
+## Master Node Upgrade
 
-run these commands on Master node
+Run the following commands on the Master node:
 
+### Drain the worker node from any running pods
 ```
 kubectl drain controlplane --ignore-daemonsets
+```
 
+### Upgrade the kubeadm and kubelet packages
+```
 apt-get upgrade -y kubeadm=1.27.0-00
 apt-get upgrade -y kubelet=1.27.0-00  --allow-change-held-packages
+```
 
+### Apply the Upgrades
+```
 kubeadm upgrade apply v1.27.0
+```
 
-
-
+### Restart Kubelet service
+```
 systemctl daemon-reload
 systemctl restart kubelet
+```
 
+### Enable the master node Scheduling 
+
+```
 kubectl uncordon controlplane
 ```
 
