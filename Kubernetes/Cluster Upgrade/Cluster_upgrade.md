@@ -1,6 +1,6 @@
-control plan upgrade
+# Control plan upgrade
 
-Master Node upgrade:
+## Master Node upgrade:
 
 run these commands on Master node
 
@@ -20,7 +20,7 @@ systemctl restart kubelet
 kubectl uncordon controlplane
 ```
 
-# Worker Nodes upgrade:
+## Worker Nodes upgrade:
 
 ### Drain the worker node from any running pods
 At Master node run this:
