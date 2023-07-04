@@ -18,7 +18,7 @@ etcdctl snapshot save snapshot.db
 etcdctl snapshot status snapshot.db
 ```
 
-### for TLS details
+#### For TLS details
 ```
 etcdctl snapshot save -h
 ```
@@ -54,6 +54,11 @@ service kube-apiserver stop
 # ETCDCTL_API=3
 etcdctl snapshot retore snapshot.db --data-dir /var/lib/etcd-from-backup
 ```
+
+#### For TLS details
+```
+etcdctl snapshot restore -h
+```
 ```
  etcdctl snapshot restore /opt/snapshot-pre-boot.db \
  --endpoints https://192.27.109.9:2379 \
@@ -79,9 +84,6 @@ systemctl restart etcd
 systemctl start kube-apiserver 
 ```
 
-### for TLS details
-```
-etcdctl snapshot restore -h
-```
+
 
 
