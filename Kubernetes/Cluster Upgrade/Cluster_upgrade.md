@@ -1,6 +1,6 @@
-# Control plan upgrade
+# Control Plan Upgrade
 
-## Master Node upgrade:
+## Master Node Upgrade:
 
 run these commands on Master node
 
