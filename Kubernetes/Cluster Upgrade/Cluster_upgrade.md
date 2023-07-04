@@ -4,6 +4,10 @@
 
 Run the following commands on the Master node:
 
+```
+kubeadm upgrade plan
+```
+
 ### Drain the worker node from any running pods
 ```
 kubectl drain controlplane --ignore-daemonsets
@@ -15,7 +19,7 @@ apt-get upgrade -y kubeadm=1.27.0-00
 apt-get upgrade -y kubelet=1.27.0-00  --allow-change-held-packages
 ```
 
-### Apply the Upgrades
+### Apply the Upgrade (upgrade the cluster components)
 ```
 kubeadm upgrade apply v1.27.0
 ```
@@ -32,6 +36,10 @@ systemctl restart kubelet
 kubectl uncordon controlplane
 ```
 
+Check the versions:
+```
+kubectl get nodes
+```
 ## Worker Nodes upgrade:
 
 ### Drain the worker node from any running pods
