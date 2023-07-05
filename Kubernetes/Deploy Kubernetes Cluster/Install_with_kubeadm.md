@@ -63,6 +63,7 @@ If you do set the `--cluster-cidr` option on kube-proxy, make sure it matches th
 ```
 
 
+
 ## 4. Join the Worker Nodes
 
 ```
