@@ -1,7 +1,7 @@
 # Install Kubernetes Cluster with KubeAdm tool
 
 ## 1. Install a container runtime
-Here will go with containerd runtime
+Here we will go with `containerd` runtime:
 
 ### Install and configure prerequisites
 #### Forwarding IPv4 and letting iptables see bridged traffic
@@ -61,10 +61,12 @@ To use the systemd cgroup driver in /etc/containerd/config.toml with runc, set:
 
 ## 2. Installing kubeadm, kubelet and kubectl
 At all Nodes: 
+
 [Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
 
 ## 3. Creating a cluster with kubeadm
 At Master Node:
+
 [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
 In Master Node:
