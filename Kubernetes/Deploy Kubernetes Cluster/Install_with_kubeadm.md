@@ -1,14 +1,15 @@
 # Install Kubernetes Cluster with KubeAdm tool
 
 ## 1. Install a container runtime
-Here will go for containerd runtime
+Here will go with containerd runtime
 
-### Install and configure prerequisites
-#### Forwarding IPv4 and letting iptables see bridged traffic
-https://kubernetes.io/docs/setup/production-environment/container-runtimes/#forwarding-ipv4-and-letting-iptables-see-bridged-traffic
+### 1.1. Install and configure prerequisites
+#### 1.1.1. Forwarding IPv4 and letting iptables see bridged traffic
+[Forwarding IPv4 and letting iptables see bridged traffic](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#forwarding-ipv4-and-letting-iptables-see-bridged-traffic)
 
 
-#### Configure cgroup Driver
+
+#### 1.1.2. Configure cgroup Driver
 
 There are two cgroup drivers available:
 1. cgroupfs
@@ -21,12 +22,16 @@ Run this command
 ps -p 1
 ```
 
-#### [Configuring systemd cgroup driver for containerd runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd-systemd)
+[Configuring systemd cgroup driver for containerd runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd-systemd)
 
 
-## 2. [Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
+## 2. Installing kubeadm, kubelet and kubectl
+At all Nodes: 
+[Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
 
-## 3. [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+## 3. Creating a cluster with kubeadm
+At Master Node:
+[Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
 In Master Node:
 
