@@ -156,7 +156,10 @@ containers:
 ```
 
 ## 4. Join the Worker Nodes
-
+Generate a kubeadm join token from Master Node
+```
+kubeadm token create --print-join-command
+```
 At the worker nodes, Apply this:
 ```
 kubeadm join 192.28.231.3:6443 --token y9kfuu.2qdhnpmy6akt7gyj \
