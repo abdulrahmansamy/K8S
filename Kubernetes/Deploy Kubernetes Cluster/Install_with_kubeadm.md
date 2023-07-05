@@ -96,6 +96,7 @@ All previous steps at once
 ```
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
+
 ```
 ```
 mkdir -p /etc/apt/keyrings/
