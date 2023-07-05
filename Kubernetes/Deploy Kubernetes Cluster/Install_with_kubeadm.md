@@ -3,13 +3,40 @@
 ## 1. Install a container runtime
 Here will go with containerd runtime
 
-### 1.1. Install and configure prerequisites
-#### 1.1.1. Forwarding IPv4 and letting iptables see bridged traffic
+### Install and configure prerequisites
+#### Forwarding IPv4 and letting iptables see bridged traffic
 [Forwarding IPv4 and letting iptables see bridged traffic](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#forwarding-ipv4-and-letting-iptables-see-bridged-traffic)
 
+Execute the below mentioned instructions:
+```
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
 
+sudo modprobe overlay
+sudo modprobe br_netfilter
 
-#### 1.1.2. Configure cgroup Driver
+# sysctl params required by setup, params persist across reboots
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+
+# Apply sysctl params without reboot
+sudo sysctl --system
+```
+Verify that the `br_netfilter`, `overlay` modules are loaded by running the following commands:
+```
+lsmod | grep br_netfilter
+lsmod | grep overlay
+```
+Verify that the `net.bridge.bridge-nf-call-iptables`, `net.bridge.bridge-nf-call-ip6tables`, and `net.ipv4.ip_forward` system variables are set to `1` in your `sysctl` config by running the following command:
+```
+sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables net.ipv4.ip_forward
+```
+#### Configure cgroup Driver
 
 There are two cgroup drivers available:
 1. cgroupfs
@@ -23,6 +50,13 @@ ps -p 1
 ```
 
 [Configuring systemd cgroup driver for containerd runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd-systemd)
+
+To use the systemd cgroup driver in /etc/containerd/config.toml with runc, set:
+```
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+  [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+    SystemdCgroup = true
+```
 
 
 ## 2. Installing kubeadm, kubelet and kubectl
