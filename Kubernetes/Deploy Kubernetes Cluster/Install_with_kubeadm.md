@@ -63,4 +63,8 @@ If you do set the `--cluster-cidr` option on kube-proxy, make sure it matches th
 ```
 
 
-## 4. Join the work
+## 4. Join the Worker Nodes
+
+```
+kubeadm join xxx.xxx.xxx:xxxx --token xxxxxxxxxxxxx --discovery-token-ca-cert-hash
+```
