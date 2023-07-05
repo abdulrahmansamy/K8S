@@ -51,7 +51,10 @@ ps -p 1
 
 [Configuring systemd cgroup driver for containerd runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd-systemd)
 
-To use the systemd cgroup driver in /etc/containerd/config.toml with runc, set:
+To use the systemd cgroup driver in `/etc/containerd/config.toml` with runc, set:
+```
+vi /etc/containerd/config.toml
+```
 ```
 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
   [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
