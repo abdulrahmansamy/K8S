@@ -180,6 +180,7 @@ containers:
 kubectl apply -f kube-flannel.yml
 
 kubectl get ds,pod -n kube-flannel
+kubectl get pod -A
 
 ```
 ## 4. Join the Worker Nodes
