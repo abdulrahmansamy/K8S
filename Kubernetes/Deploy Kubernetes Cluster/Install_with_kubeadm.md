@@ -121,6 +121,7 @@ https://www.weave.works/docs/net/latest/kubernetes/kube-addon/
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 ```
 
+
 If you do set the `--cluster-cidr` option on kube-proxy, make sure it matches the `IPALLOC_RANGE` given to Weave Net, Manually editing the YAML file of the `weave net` daemonset:
 ```
       containers:
@@ -130,6 +131,12 @@ If you do set the `--cluster-cidr` option on kube-proxy, make sure it matches th
               value: 10.244.0.0/16
 ```
 
+##### Deploy `Flannel` pod
+https://github.com/flannel-io/flannel#deploying-flannel-manually
+
+```
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+```
 
 
 ## 4. Join the Worker Nodes
