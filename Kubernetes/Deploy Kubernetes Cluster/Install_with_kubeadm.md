@@ -92,7 +92,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 ```
 
-all steps at once
+All previous steps at once
 ```
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -176,6 +176,8 @@ containers:
 ```
 ```
 kubectl apply -f kube-flannel.yml
+
+kubectl get ds,pod -n kube-flannel
 
 ```
 ## 4. Join the Worker Nodes
