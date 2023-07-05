@@ -32,7 +32,7 @@ In Master Node:
 
 Use the master node interface IP
 ```
-Kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=xxx.xxx.xxx.xxx
+kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=xxx.xxx.xxx.xxx
 ```
 Then: 
 ```
@@ -66,5 +66,6 @@ If you do set the `--cluster-cidr` option on kube-proxy, make sure it matches th
 ## 4. Join the Worker Nodes
 
 ```
-kubeadm join xxx.xxx.xxx:xxxx --token xxxxxxxxxxxxx --discovery-token-ca-cert-hash
+kubeadm join 192.28.231.3:6443 --token y9kfuu.2qdhnpmy6akt7gyj \
+        --discovery-token-ca-cert-hash sha256:65a9894b7dfb4103e6a4d74209ac6f96c7f41eec0f969ef3aede9322153a2b6f
 ```
