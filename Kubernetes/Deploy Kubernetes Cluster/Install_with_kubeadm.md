@@ -105,8 +105,8 @@ kubeadm init --apiserver-cert-extra-sans=controlplane --apiserver-advertise-addr
 Then: 
 ```
 mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/conf
-sudo chown $(id -u):$(id -g) $HOME/.kube/conf
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 #### Deploy a pod network
