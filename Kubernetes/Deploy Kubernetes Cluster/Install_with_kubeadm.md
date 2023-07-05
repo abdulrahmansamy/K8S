@@ -66,6 +66,7 @@ If you do set the `--cluster-cidr` option on kube-proxy, make sure it matches th
 
 ## 4. Join the Worker Nodes
 
+At the worker nodes, Apply this:
 ```
 kubeadm join 192.28.231.3:6443 --token y9kfuu.2qdhnpmy6akt7gyj \
         --discovery-token-ca-cert-hash sha256:65a9894b7dfb4103e6a4d74209ac6f96c7f41eec0f969ef3aede9322153a2b6f
