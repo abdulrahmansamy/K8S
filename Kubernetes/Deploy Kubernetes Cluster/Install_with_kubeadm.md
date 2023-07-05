@@ -110,6 +110,8 @@ Then:
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl get nodes
+
 ```
 
 #### Deploy a pod network
@@ -144,6 +146,7 @@ or
 ```
 curl -LO https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
 vi kube-flannel.yml
+
 ```
 
 ```
@@ -154,11 +157,11 @@ containers:
         args:
         - --ip-masq
         - --kube-subnet-mgr
-        - --iface=eth0
-        
+        - --iface=eth0    
 ```
 ```
 kubectl apply -f kube-flannel.yml
+
 ```
 ## 4. Join the Worker Nodes
 Generate a kubeadm join token from Master Node
