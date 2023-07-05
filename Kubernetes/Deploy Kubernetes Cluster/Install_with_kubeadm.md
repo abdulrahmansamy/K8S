@@ -88,7 +88,9 @@ sudo apt-get install -y kubelet=1.27.0-00 kubeadm=1.27.0-00 kubectl=1.27.0-00
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-## 3. Creating a cluster with kubeadm
+## 3. Bootstrap a `kubernetes cluster` using `kubeadm`
+
+
 At Master Node:
 
 [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
