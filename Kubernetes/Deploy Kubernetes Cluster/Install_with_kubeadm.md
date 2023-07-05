@@ -154,7 +154,9 @@ containers:
         - --iface=eth0
         
 ```
-
+```
+kubectl apply -f kube-flannel.yml
+```
 ## 4. Join the Worker Nodes
 Generate a kubeadm join token from Master Node
 ```
