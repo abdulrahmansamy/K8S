@@ -14,10 +14,10 @@ There are two cgroup drivers available:
 1. cgroupfs
 2. systemd
 
-###### How to know your system is using systemd or cgroupfs?
+> How to know your system is using `systemd` or `cgroupfs`?
 Run this command
 ```
 ps -p 1
 ```
 
-##### [systemd cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd-systemd)
+#### [Configuring systemd cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd-systemd)
