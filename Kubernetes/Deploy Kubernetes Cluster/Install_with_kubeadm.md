@@ -137,7 +137,23 @@ https://github.com/flannel-io/flannel#deploying-flannel-manually
 ```
 kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
 ```
+or
+```
+curl -LO https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+vi kube-flannel.yml
+```
 
+```
+containers:
+      - name: kube-flannel
+        command:
+        - /opt/bin/flanneld
+        args:
+        - --ip-masq
+        - --kube-subnet-mgr
+        - --iface=eth0
+        
+```
 
 ## 4. Join the Worker Nodes
 
