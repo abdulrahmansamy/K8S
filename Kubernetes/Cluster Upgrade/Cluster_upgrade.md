@@ -15,8 +15,14 @@ kubectl drain controlplane --ignore-daemonsets
 
 ### Upgrade the kubeadm and kubelet packages
 ```
-apt-get upgrade -y kubeadm=1.27.0-00
-apt-get upgrade -y kubelet=1.27.0-00  --allow-change-held-packages
+apt-get upgrade -y kubeadm=1.27.0-00 kubelet=1.27.0-00 kubectl=1.27.0-00 --allow-change-held-packages
+```
+
+or 
+```
+apt-mark unhold kubeadm kubelet kubectl && \
+apt-get update && apt-get install -y kubeadm=1.27.0-00 kubelet=1.27.0-00 kubectl=1.27.0-00 && \
+apt-mark hold kubeadm kubelet kubectl
 ```
 
 ### Apply the Upgrade (upgrade the cluster components)
